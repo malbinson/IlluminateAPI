@@ -6,7 +6,7 @@ var app = express()
 var cors = require('cors');
 
 app.use(cors({origin: 'http://localhost:63342'}));
-var config = require('./config_local')
+var config = require('./config')
 
 function hash_function_sha1(base_string, key) {
   return crypto.createHmac('sha1', key).update(base_string).digest('base64');
