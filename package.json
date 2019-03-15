@@ -10,6 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "crypto": "^1.0.1",
+    "express": "^4.16.4",
+    "oauth-1.0a": "^2.2.5",
+    "request": "^2.88.0"
   }
 }
