@@ -23,12 +23,6 @@ const oauth = OAuth({
   }
 });
 
-const request_data = {
-  url: 'https://berkeley.illuminateed.com/dna/rest_server.php/Api/Roster/?section_id=148761&site_id=131177',
-  method: 'GET'
-};
-
-// // Note: The token is optional for some requests
 const token = {
   key: config.illuminateAuth.userKey,
   secret: config.illuminateAuth.userSecret
@@ -41,7 +35,12 @@ app.get('/myGrades', function(req, res) {
     url: 'https://berkeley.illuminateed.com/dna/rest_server.php/Api/GradebookScores/?local_student_id=2011675&page=' + page,
     method: 'GET'
   }
-  console.log(request_data.url)
+
+  makeCall(res,request_data)
+
+});
+
+function makeCall(res,requestData) {
 
   request({
     url: request_data.url,
@@ -54,7 +53,9 @@ app.get('/myGrades', function(req, res) {
     res.json(JSON.parse(body));
   })
 
-});
+}
+
+
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('meow')
