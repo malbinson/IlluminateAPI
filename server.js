@@ -36,12 +36,6 @@ app.get('/myGrades', function(req, res) {
     method: 'GET'
   }
 
-  makeCall(res,request_data)
-
-});
-
-function makeCall(res,request_data) {
-
   request({
     url: request_data.url,
     method: request_data.method,
@@ -53,8 +47,7 @@ function makeCall(res,request_data) {
     res.json(JSON.parse(body));
   })
 
-}
-
+});
 
 
 app.listen(process.env.PORT || 3000, () => {
