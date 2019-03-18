@@ -40,7 +40,7 @@ app.get('/myGrades', function(req, res) {
 
 });
 
-function makeCall(res,requestData) {
+function makeCall(res,request_data) {
 
   request({
     url: request_data.url,
